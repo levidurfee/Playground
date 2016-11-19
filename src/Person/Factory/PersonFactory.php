@@ -11,9 +11,16 @@ use levi\Person\Person;
 // our person factory instantiates all of the needed classes
 // we would normally use interfaces as the type hints and not
 // concrete classes
+/**
+ * Class PersonFactory
+ * @package levi\Person\Factory
+ */
 class PersonFactory
 {
-    public static function create()
+    /**
+     * @return Person
+     */
+    public static function create(): Person
     {
         return new Person(
             new Head,

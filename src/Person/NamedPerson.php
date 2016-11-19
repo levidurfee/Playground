@@ -8,10 +8,24 @@ use levi\Person\Parts\RightArm;
 use levi\Person\Parts\RightLeg;
 use levi\Person\Parts\Torso;
 
+/**
+ * Class NamedPerson
+ * @package levi\Person
+ */
 class NamedPerson extends Person
 {
     protected $name;
 
+    /**
+     * NamedPerson constructor.
+     * @param Head $head
+     * @param LeftArm $leftArm
+     * @param RightArm $rightArm
+     * @param Torso $torso
+     * @param LeftLeg $leftLeg
+     * @param RightLeg $rightLeg
+     * @param Name $name
+     */
     public function __construct(
         Head $head,
         LeftArm $leftArm,

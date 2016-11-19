@@ -7,6 +7,10 @@ use levi\Person\Parts\RightArm;
 use levi\Person\Parts\RightLeg;
 use levi\Person\Parts\Torso;
 
+/**
+ * Class Person
+ * @package levi\Person
+ */
 class Person
 {
     public $head;
@@ -19,6 +23,15 @@ class Person
     // this would probably never happen
     // we would also want to type hint their interface and not the
     // concrete class
+    /**
+     * Person constructor.
+     * @param Head $head
+     * @param LeftArm $leftArm
+     * @param RightArm $rightArm
+     * @param Torso $torso
+     * @param LeftLeg $leftLeg
+     * @param RightLeg $rightLeg
+     */
     public function __construct(
         Head $head,
         LeftArm $leftArm,
@@ -28,11 +41,11 @@ class Person
         RightLeg $rightLeg
     )
     {
-        $this->head = $head;
-        $this->leftArm = $leftArm;
+        $this->head     = $head;
+        $this->leftArm  = $leftArm;
         $this->rightArm = $rightArm;
-        $this->torso = $torso;
-        $this->leftLeg = $leftLeg;
+        $this->torso    = $torso;
+        $this->leftLeg  = $leftLeg;
         $this->rightLeg = $rightLeg;
     }
 
@@ -48,6 +61,6 @@ class Person
 
     public function sleep()
     {
-        echo "The person is sleeping.";
+        echo "The person is sleeping.\n";
     }
 }
