@@ -1,4 +1,4 @@
-<?php namespace levi\Contracts;
+<?php namespace levi\Exercise\Contracts;
 
 interface ExerciseTools
 {

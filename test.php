@@ -1,8 +1,12 @@
 <?php
 include("vendor/autoload.php");
 
-use levi\Exercise;
-use levi\Weights;
+use levi\Exercise\Exercise;
+use levi\Exercise\PushUps;
+use levi\Exercise\Weights;
 
-$exercise = new Exercise(new Weights);
-$exercise->start();
+$weightExercise = new Exercise(new Weights);
+$weightExercise->start();
+
+$selfExercise = new Exercise(new PushUps);
+$selfExercise->start();

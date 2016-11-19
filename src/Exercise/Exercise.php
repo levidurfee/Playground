@@ -1,6 +1,6 @@
-<?php namespace levi;
+<?php namespace levi\Exercise;
 
-use levi\Contracts\ExerciseTools;
+use levi\Exercise\Contracts\ExerciseTools;
 
 class Exercise
 {
