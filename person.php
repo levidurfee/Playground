@@ -1,5 +1,6 @@
 <?php
 
+use levi\Person\Factory\NamedPersonFactory;
 use levi\Person\Factory\PersonFactory;
 use levi\Person\Parts\Head;
 use levi\Person\Parts\LeftArm;
@@ -57,5 +58,10 @@ echo "--\n";
 $person = PersonFactory::create();
 $person->build();
 
+echo "--\n";
+
 // we could also extend the Person class and create a new Factory without
-// modifying the Person class.
+// modifying the Person class. Lets give the Person a name.
+$namedPerson = NamedPersonFactory::create();
+$namedPerson->build(); // we overrode the build method to also output the name
+$namedPerson->sleep(); // we can still call the same methods that Person has
