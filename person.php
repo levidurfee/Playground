@@ -35,7 +35,7 @@ $veryVerbosePerson = new Person(
 
 $veryVerbosePerson->build();
 
-echo "--\n";
+echo "--<br>";
 
 /*
  * Verbose Person example
@@ -52,16 +52,17 @@ $verbosePerson = new Person(
 
 $verbosePerson->build();
 
-echo "--\n";
+echo "--<br>";
 
 // this simplifies the creation of a Person
 $person = PersonFactory::create();
 $person->build();
 
-echo "--\n";
+echo "--<br>";
 
 // we could also extend the Person class and create a new Factory without
 // modifying the Person class. Lets give the Person a name.
 $namedPerson = NamedPersonFactory::create();
 $namedPerson->build(); // we overrode the build method to also output the name
+echo "--<br>";
 $namedPerson->sleep(); // we can still call the same methods that Person has
