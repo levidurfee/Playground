@@ -1,5 +1,8 @@
 <?php
 
+// Implementing this for my DigitalOcean API Client isn't as important
+// as finishing all of the requests.
+
 class Droplets {
 	public function create(CreateDroplet $createDroplet) {
 		var_dump($createDroplet);
