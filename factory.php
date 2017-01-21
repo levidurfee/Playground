@@ -67,3 +67,8 @@ factory::build(CreateDroplet::class)->create([
 	'ipv6' => true
 	]
 );
+
+// using the above approach will simplify creating the requests and the action
+// class. It's easier to pass all the options via an array versus instantiating
+// both classes, then adding the extra options to the request, then passing
+// the request to the action method.
