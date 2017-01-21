@@ -1,4 +1,7 @@
 {
+	"require" : {
+		"wappr/digitalocean": "*"
+	},
   "autoload": {
     "psr-4": {"levi\\": "src/"}
   }
