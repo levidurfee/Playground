@@ -3,6 +3,7 @@
 class Droplets {
 	public function create(CreateDroplet $createDroplet) {
 		var_dump($createDroplet);
+		echo 'Youre droplet has been created!' . "\n";
 	}
 }
 
@@ -35,25 +36,30 @@ class CreateDroplet {
 class RetrieveDroplet {}
 class ListAllDomains {}
 
-function factory($class) {
-	$types = [
-		'DropletFactory' => [
-			'create' => CreateDroplet::class,
-			'retrieve' => RetrieveDroplet::class,
-		],
-		'domains' => [
-			'listAll' => ListAllDomains::class,
-		],
-	];
+class factory {
+	public static function build($class) {
+		$types = [
+			'DropletFactory' => [
+				'create' => CreateDroplet::class,
+				'retrieve' => RetrieveDroplet::class,
+			],
+			'domains' => [
+				'listAll' => ListAllDomains::class,
+			],
+		];
 
-	foreach($types as $type => $request) {
-		if(in_array($class, $request)) {
-			return new $type;
+		foreach($types as $type => $request) {
+			if(in_array($class, $request)) {
+				return new $type;
+			}
 		}
 	}
 }
 
-factory(CreateDroplet::class)->create([
+// Having a factory function assumes the person using the package won't already
+// have one. So we should namespace this. Using a simple class for this example
+// irl it would be in a unique namespace to prevent any collisions.
+factory::build(CreateDroplet::class)->create([
 	'name' => 'levi', 
 	'region' => 'nyc1', 
 	'size' => '512mb', 
