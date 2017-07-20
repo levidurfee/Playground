@@ -9,9 +9,6 @@ struct Shape {
     int height;
 };
 
-class Square;
-class Rectangle;
-
 class Box {
 protected:
     int area(Shape shape) {
@@ -43,7 +40,7 @@ class Square :public Box{
 public:
     Shape build(int width, int height) {
         if(width != height) {
-            throw std::runtime_error("error");
+            throw std::runtime_error("error: parameters given do not make a square.");
         }
 
         return make(width, height);
@@ -54,7 +51,7 @@ class Rectangle :public Box {
 public:
     Shape build(int width, int height) {
         if(width == height) {
-            throw std::runtime_error("error");
+            throw std::runtime_error("error: parameters given do not make a rectangle.");
         }
 
         return make(width, height);
@@ -76,7 +73,6 @@ int main()
     int area = square.getArea(shape);
 
     printf("Area: %i\n", area);
-
 
     return 0;
 }
