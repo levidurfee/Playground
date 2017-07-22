@@ -16,6 +16,7 @@
 </div>
 <script type="text/javascript">
 var tracker = 0;
+var mod = 2;
 (function() {
     document.onmousemove = handleMouseMove;
     function handleMouseMove(event) {
@@ -38,7 +39,7 @@ var tracker = 0;
         }
 
         // Use event.pageX / event.pageY here
-        if(tracker % 10 === 0) {
+        if(tracker % mod === 0) {
         	console.log(tracker, event.pageX, event.pageY);
         }
     }
